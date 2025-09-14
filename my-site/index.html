@@ -1,47 +1,75 @@
 <!doctype html>
-<html lang="tr">
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>My Site</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sarp • Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="site-header">
-    <a class="logo" href="#home">My Site</a>
-    <nav class="nav">
+  <!-- Sidebar / Header -->
+  <aside class="sidebar" id="sidebar">
+    <button class="close" id="closeNav" aria-label="Close menu">✕</button>
+    <a class="brand" href="#home">Sarp</a>
+    <nav class="menu">
       <a href="#home">Home</a>
       <a href="#projects">Projects</a>
       <a href="#big-ideas">Big Ideas</a>
       <a href="#documentation">Documentation</a>
+      <a href="#resources">Resources</a>
     </nav>
+    <div class="meta">
+      <small>© 2025 • Built with HTML/CSS/JS</small>
+    </div>
+  </aside>
+
+  <header class="topbar">
+    <button id="openNav" class="hamburger" aria-label="Open menu">☰</button>
+    <span class="title">Sarp • Portfolio</span>
   </header>
 
-  <main>
+  <main class="content">
     <!-- HOME -->
     <section id="home" class="section">
       <h1>Home</h1>
-      <p>Hoş geldin! Bu sayfa ödev için gereken dört bölümü içerir.</p>
+      <p class="lead">
+        Hello! I am Sarp a 12th grade student, at Hisar School.
+      </p>
+      <p>
+        This page includes my current projects, some big ideas I'm exploring,
+        documentation notes, and a short list of resources I find useful.
+      </p>
     </section>
 
     <!-- PROJECTS -->
     <section id="projects" class="section">
       <h2>Projects</h2>
-      <div class="card-grid">
+      <div class="grid">
         <article class="card">
-          <h3>Proje 1</h3>
-          <p>Kısa açıklama. Amaç, teknoloji ve sonuç.</p>
-          <a class="btn" href="#" target="_blank" rel="noopener">Repo / Demo</a>
+          <h3>Project Alpha</h3>
+          <p>Small web app demonstrating client-side routing and API calls.</p>
+          <div class="tags">
+            <span>JavaScript</span><span>Fetch API</span>
+          </div>
+          <p><a class="btn" href="#" target="_blank" rel="noopener">Live Demo</a></p>
         </article>
+
         <article class="card">
-          <h3>Proje 2</h3>
-          <p>Kısa açıklama.</p>
-          <a class="btn" href="#" target="_blank" rel="noopener">Repo / Demo</a>
+          <h3>Project Beta</h3>
+          <p>Interactive data viz with canvas and simple animations.</p>
+          <div class="tags">
+            <span>HTML</span><span>Canvas</span>
+          </div>
+          <p><a class="btn" href="#" target="_blank" rel="noopener">Repository</a></p>
         </article>
+
         <article class="card">
-          <h3>Proje 3</h3>
-          <p>Kısa açıklama.</p>
-          <a class="btn" href="#" target="_blank" rel="noopener">Repo / Demo</a>
+          <h3>Project Gamma</h3>
+          <p>Minimal notes app using localStorage for persistence.</p>
+          <div class="tags">
+            <span>CSS</span><span>localStorage</span>
+          </div>
+          <p><a class="btn" href="#" target="_blank" rel="noopener">Read More</a></p>
         </article>
       </div>
     </section>
@@ -50,29 +78,52 @@
     <section id="big-ideas" class="section">
       <h2>Big Ideas</h2>
       <ul class="ideas">
-        <li><strong>Fikir 1:</strong> Neyi çözüyor? Neden önemli?</li>
-        <li><strong>Fikir 2:</strong> Yaklaşım, olası etki.</li>
-        <li><strong>Fikir 3:</strong> Sonraki adımlar.</li>
+        <li><strong>Lightweight Learning Tools:</strong> Offline-first study helpers that run fully in the browser.</li>
+        <li><strong>Micro-dashboards:</strong> Tiny, composable widgets that summarize personal data privately.</li>
+        <li><strong>Accessible UI Patterns:</strong> Components that default to keyboard and screen-reader support.</li>
       </ul>
     </section>
 
     <!-- DOCUMENTATION -->
     <section id="documentation" class="section">
       <h2>Documentation</h2>
-      <p>Kurulum, kullanım ve mimari notları:</p>
-      <ol>
-        <li><strong>Setup:</strong> Gereksinimler ve nasıl çalıştırılır.</li>
-        <li><strong>Structure:</strong> Klasör/dosya yapısı.</li>
-        <li><strong>Contributing:</strong> Branch, commit mesajları, PR süreci.</li>
-        <li><strong>License:</strong> MIT vb.</li>
-      </ol>
-      <p>Daha detay için <code>README.md</code> dosyasına da aynı başlıkları ekleyebilirsin.</p>
+      <details open>
+        <summary>Setup</summary>
+        <ol>
+          <li>Clone or download the repository.</li>
+          <li>Open <code>index.html</code> in a browser (no build step).</li>
+          <li>Deploy via GitHub Pages: Settings → Pages → Branch: <code>main</code>.</li>
+        </ol>
+      </details>
+      <details>
+        <summary>Structure</summary>
+        <pre><code>.
+├─ index.html
+├─ style.css
+└─ script.js
+</code></pre>
+      </details>
+      <details>
+        <summary>Contributing</summary>
+        <p>Use feature branches, write clear commit messages, open PRs with short summaries and screenshots.</p>
+      </details>
+      <details>
+        <summary>License</summary>
+        <p>MIT (placeholder).</p>
+      </details>
+    </section>
+
+    <!-- RESOURCES -->
+    <section id="resources" class="section">
+      <h2>Resources</h2>
+      <ul class="resources">
+        <li><a href="https://developer.mozilla.org/" target="_blank" rel="noopener">MDN Web Docs</a> — HTML/CSS/JS reference.</li>
+        <li><a href="https://web.dev/learn/" target="_blank" rel="noopener">web.dev/learn</a> — Modern web learning paths.</li>
+        <li><a href="https://github.com/ossu/computer-science" target="_blank" rel="noopener">OSSU CS</a> — Open source CS curriculum.</li>
+        <!-- İSTEK ÜZERİNE: Duke University's Programming Foundations kursu BİLEREK eklenmedi -->
+      </ul>
     </section>
   </main>
-
-  <footer class="site-footer">
-    <p>&copy; 2025 • My Site</p>
-  </footer>
 
   <script src="script.js"></script>
 </body>

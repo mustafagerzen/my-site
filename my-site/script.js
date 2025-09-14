@@ -1,16 +1,24 @@
-// Menüde aktif olan linki vurgula
-const links = document.querySelectorAll('.nav a');
-const secs = [...document.querySelectorAll('section')];
+// Mobile drawer
+const sidebar = document.getElementById('sidebar');
+const openNav = document.getElementById('openNav');
+const closeNav = document.getElementById('closeNav');
 
-function setActive() {
-  const y = window.scrollY + 120; // header payı
-  const current = secs.findLast(s => s.offsetTop <= y) || secs[0];
+openNav?.addEventListener('click', () => sidebar.classList.add('open'));
+closeNav?.addEventListener('click', () => sidebar.classList.remove('open'));
+
+// Active link highlighter on scroll
+const links = document.querySelectorAll('.menu a');
+const sections = [...document.querySelectorAll('main .section')];
+
+function setActive(){
+  const y = window.scrollY + 140;
+  const current = sections.findLast(s => s.offsetTop <= y) || sections[0];
   links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current.id));
 }
 setActive();
 document.addEventListener('scroll', setActive);
 
-// Dış link güvenliği (Projects düğmeleri vs.)
+// Safety for external links
 document.querySelectorAll('a[target="_blank"]').forEach(a => {
-  a.rel = 'noopener noreferrer';
+  if(!a.rel.includes('noopener')) a.rel = (a.rel + ' noopener noreferrer').trim();
 });
