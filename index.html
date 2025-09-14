@@ -42,117 +42,199 @@
     </section>
 
     <!-- PROJECTS -->
-    <section id="projects" class="section">
-      <h2>Projects</h2>
-      <div class="project-list">
+<section id="projects" class="section">
+  <h2>Projects (AP CS A • Unit 1)</h2>
+  <p>Her örnek sadece Unit 1 konularını kullanır: primitive types, expressions, casting, final constants.</p>
+  <div class="project-list">
 
-        <article class="project-item">
-          <h3>Q1 – Basic Math</h3>
-          <p>Kullanıcıdan iki sayı alıp çarpımını hesaplayan basit program:</p>
-          <pre><code>function multiply(a, b) {
-  return a * b;
-}
-console.log(multiply(4, 5)); // 20</code></pre>
-        </article>
-
-        <article class="project-item">
-          <h3>Q2 – Ice Cream Sales</h3>
-          <p>3 gün boyunca 3 tat için satışları toplayıp ortalamayı hesaplayan kod:</p>
-          <pre><code>const days = [
-  { chocolate: 30, vanilla: 20, strawberry: 25 },
-  { chocolate: 25, vanilla: 22, strawberry: 30 },
-  { chocolate: 35, vanilla: 18, strawberry: 28 }
-];
-
-let total = { chocolate: 0, vanilla: 0, strawberry: 0 };
-days.forEach(d => {
-  total.chocolate += d.chocolate;
-  total.vanilla += d.vanilla;
-  total.strawberry += d.strawberry;
-});
-
-const avg = {
-  chocolate: total.chocolate / days.length,
-  vanilla: total.vanilla / days.length,
-  strawberry: total.strawberry / days.length
-};
-console.log(avg);</code></pre>
-        </article>
-
-        <article class="project-item">
-          <h3>Q3 – Rocket to the Stars</h3>
-          <pre><code>function rocketMotion(mass, thrust, burnTime) {
-  const acceleration = thrust / mass;
-  const velocity = acceleration * burnTime;
-  return { acceleration, velocity };
-}
-console.log(rocketMotion(1000, 5000, 10));</code></pre>
-        </article>
-
-        <article class="project-item">
-          <h3>Q4 – Newton’s Method</h3>
-          <pre><code>function sqrtApprox(n) {
-  let guess = n / 2;
-  for (let i = 0; i < 3; i++) {
-    guess = (guess + n / guess) / 2;
+    <article class="project-item">
+      <h3>Q1 – Product of Two Integers</h3>
+      <p>İki tam sayı al, çarpımını yazdır.</p>
+      <pre><code>import java.util.Scanner;
+public class Q1_Product {
+  public static void main(String[] args){
+    Scanner in = new Scanner(System.in);
+    System.out.print("Input first integer: ");
+    int a = in.nextInt();
+    System.out.print("Input second integer: ");
+    int b = in.nextInt();
+    int product = a * b;
+    System.out.println(a + " x " + b + " = " + product);
   }
-  return guess;
-}
-console.log(sqrtApprox(25));</code></pre>
-        </article>
+}</code></pre>
+    </article>
 
-        <article class="project-item">
-          <h3>Q5 – Which Day</h3>
-          <pre><code>function whichDay(year, month, day) {
-  const d = new Date(year, month - 1, day);
-  return d.getDay(); // 0 = Sunday
-}
-console.log(whichDay(2025, 9, 14));</code></pre>
-        </article>
+    <article class="project-item">
+      <h3>Q2 – Average of Three Scores (int vs. double)</h3>
+      <p>Üç notun ortalamasını hem <code>int</code> hem <code>double</code> olarak göster, casting örneği.</p>
+      <pre><code>import java.util.Scanner;
+public class Q2_Average {
+  public static void main(String[] args){
+    Scanner in = new Scanner(System.in);
+    System.out.print("Score 1: "); int s1 = in.nextInt();
+    System.out.print("Score 2: "); int s2 = in.nextInt();
+    System.out.print("Score 3: "); int s3 = in.nextInt();
 
-        <article class="project-item">
-          <h3>Q6 – Wind Chill</h3>
-          <pre><code>function windChill(T, V) {
-  if (T > 50 || V <= 3) return "N/A";
-  return 35.74 + 0.6215*T - 35.75*(V**0.16) + 0.4275*T*(V**0.16);
-}
-console.log(windChill(30, 10));</code></pre>
-        </article>
+    int sum = s1 + s2 + s3;
+    int avgInt = sum / 3;                 // integer division
+    double avgDouble = sum / 3.0;        // double division
+    double avgCast = (double) sum / 3;   // explicit cast
 
-        <article class="project-item">
-          <h3>Q7 – Divisible by 7</h3>
-          <pre><code>function bothDivisible(a, b) {
-  return a % 7 === 0 && b % 7 === 0;
-}
-console.log(bothDivisible(14, 21));</code></pre>
-        </article>
+    System.out.println("Average (int)   : " + avgInt);
+    System.out.println("Average (double): " + avgDouble);
+    System.out.println("Average (cast)  : " + avgCast);
+  }
+}</code></pre>
+    </article>
 
-        <article class="project-item">
-          <h3>Q8 – Triangle Area (Heron)</h3>
-          <pre><code>function heronArea(a, b, c) {
-  const s = (a + b + c) / 2;
-  return Math.sqrt(s * (s - a) * (s - b) * (s - c));
-}
-console.log(heronArea(3, 4, 5));</code></pre>
-        </article>
+    <article class="project-item">
+      <h3>Q3 – Minutes to Hours:Minutes</h3>
+      <p>Mod ve bölüm kullanımı (%, /): dakika girişini saat:dakika formatına çevir.</p>
+      <pre><code>import java.util.Scanner;
+public class Q3_TimeConvert {
+  public static void main(String[] args){
+    Scanner in = new Scanner(System.in);
+    System.out.print("Total minutes: ");
+    int minutes = in.nextInt();
+    int hours = minutes / 60;
+    int mins = minutes % 60;
+    System.out.println(minutes + " min = " + hours + "h " + mins + "m");
+  }
+}</code></pre>
+    </article>
 
-        <article class="project-item">
-          <h3>Q9 – BMI</h3>
-          <pre><code>function BMI(weight, height) {
-  return weight / (height * height);
-}
-console.log(BMI(70, 1.75));</code></pre>
-        </article>
+    <article class="project-item">
+      <h3>Q4 – Circle Area & Circumference</h3>
+      <p><code>final</code> sabit ve <code>double</code> ile hesaplama.</p>
+      <pre><code>import java.util.Scanner;
+public class Q4_Circle {
+  public static void main(String[] args){
+    final double PI = 3.141592653589793;
+    Scanner in = new Scanner(System.in);
+    System.out.print("Radius: ");
+    double r = in.nextDouble();
+    double area = PI * r * r;
+    double circ = 2 * PI * r;
+    System.out.println("Area = " + area);
+    System.out.println("Circumference = " + circ);
+  }
+}</code></pre>
+    </article>
 
-        <article class="project-item">
-          <h3>Q10 – Barycenter Calculation</h3>
-          <pre><code>function barycenter(m1, x1, m2, x2) {
-  return (m1*x1 + m2*x2) / (m1 + m2);
-}
-console.log(barycenter(5, 0, 3, 10));</code></pre>
-        </article>
-      </div>
-    </section>
+    <article class="project-item">
+      <h3>Q5 – Fahrenheit → Celsius</h3>
+      <p>Tip farkı ve ondalıklı hesap: C = (F − 32) × 5/9</p>
+      <pre><code>import java.util.Scanner;
+public class Q5_TempConvert {
+  public static void main(String[] args){
+    Scanner in = new Scanner(System.in);
+    System.out.print("Fahrenheit: ");
+    double f = in.nextDouble();
+    double c = (f - 32) * 5.0 / 9.0;
+    System.out.println("Celsius = " + c);
+  }
+}</code></pre>
+    </article>
+
+    <article class="project-item">
+      <h3>Q6 – Tip Calculator</h3>
+      <p>Hesap ve bahşiş yüzdesi ile toplam ücreti bul.</p>
+      <pre><code>import java.util.Scanner;
+public class Q6_Tip {
+  public static void main(String[] args){
+    Scanner in = new Scanner(System.in);
+    System.out.print("Bill amount: ");
+    double bill = in.nextDouble();
+    System.out.print("Tip rate (%) : ");
+    double ratePercent = in.nextDouble();
+    double tip = bill * ratePercent / 100.0;
+    double total = bill + tip;
+    System.out.println("Tip = " + tip);
+    System.out.println("Total = " + total);
+  }
+}</code></pre>
+    </article>
+
+    <article class="project-item">
+      <h3>Q7 – Rectangle Area & Perimeter</h3>
+      <p>Girdi: genişlik ve yükseklik. Çıktı: alan ve çevre.</p>
+      <pre><code>import java.util.Scanner;
+public class Q7_Rectangle {
+  public static void main(String[] args){
+    Scanner in = new Scanner(System.in);
+    System.out.print("Width: ");  double w = in.nextDouble();
+    System.out.print("Height: "); double h = in.nextDouble();
+    double area = w * h;
+    double per  = 2 * (w + h);
+    System.out.println("Area = " + area);
+    System.out.println("Perimeter = " + per);
+  }
+}</code></pre>
+    </article>
+
+    <article class="project-item">
+      <h3>Q8 – BMI Calculator</h3>
+      <p>BMI = kg / (m²). Double aritmetik ve basit çıktı.</p>
+      <pre><code>import java.util.Scanner;
+public class Q8_BMI {
+  public static void main(String[] args){
+    Scanner in = new Scanner(System.in);
+    System.out.print("Weight (kg): ");
+    double kg = in.nextDouble();
+    System.out.print("Height (m): ");
+    double m = in.nextDouble();
+    double bmi = kg / (m * m);
+    System.out.println("BMI = " + bmi);
+  }
+}</code></pre>
+    </article>
+
+    <article class="project-item">
+      <h3>Q9 – Unit Conversion (kg ↔ lb)</h3>
+      <p><code>final</code> sabit ve çarpma/bölme ile dönüşüm.</p>
+      <pre><code>import java.util.Scanner;
+public class Q9_Units {
+  public static void main(String[] args){
+    final double KG_PER_LB = 0.45359237; // 1 lb = 0.45359237 kg
+    Scanner in = new Scanner(System.in);
+    System.out.print("Value: ");
+    double val = in.nextDouble();
+    System.out.print("Type (1=kg→lb, 2=lb→kg): ");
+    int type = in.nextInt();
+
+    double result;
+    if (type == 1) result = val / KG_PER_LB;  // kg→lb
+    else result = val * KG_PER_LB;            // lb→kg
+
+    System.out.println("Result = " + result);
+  }
+}</code></pre>
+    </article>
+
+    <article class="project-item">
+      <h3>Q10 – Simple Interest</h3>
+      <p>Basit faiz: A = P + P·r·t (yıllık, bileşik değil).</p>
+      <pre><code>import java.util.Scanner;
+public class Q10_SimpleInterest {
+  public static void main(String[] args){
+    Scanner in = new Scanner(System.in);
+    System.out.print("Principal (P): ");
+    double P = in.nextDouble();
+    System.out.print("Rate (%) (r): ");
+    double rPercent = in.nextDouble();
+    System.out.print("Time (years, t): ");
+    double t = in.nextDouble();
+
+    double r = rPercent / 100.0;
+    double A = P + P * r * t;
+    System.out.println("Amount A = " + A);
+  }
+}</code></pre>
+    </article>
+
+  </div>
+</section>
+
 
     <!-- BIG IDEAS -->
     <section id="big-ideas" class="section">
@@ -185,7 +267,7 @@ let isStudent = true;</code></pre>
 
       <details>
         <summary><strong>Loops</strong></summary>
-        <pre><code>for (let i = 0; i < 5; i++) {
+        <pre><code>for (let i = 0; i &lt; 5; i++) {
   console.log("Merhaba " + i);
 }</code></pre>
       </details>
