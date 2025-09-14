@@ -6,7 +6,7 @@ const closeNav = document.getElementById('closeNav');
 openNav?.addEventListener('click', () => sidebar.classList.add('open'));
 closeNav?.addEventListener('click', () => sidebar.classList.remove('open'));
 
-// Active link highlighter on scroll
+// Active link highlight
 const links = document.querySelectorAll('.menu a');
 const sections = [...document.querySelectorAll('main .section')];
 
@@ -17,8 +17,3 @@ function setActive(){
 }
 setActive();
 document.addEventListener('scroll', setActive);
-
-// Safety for external links
-document.querySelectorAll('a[target="_blank"]').forEach(a => {
-  if(!a.rel.includes('noopener')) a.rel = (a.rel + ' noopener noreferrer').trim();
-});

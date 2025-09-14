@@ -37,39 +37,119 @@
       </p>
       <p>
         This page includes my current projects, some big ideas I'm exploring,
-        documentation notes, and a short list of resources I find useful.
+        documentation notes, and a short list of resources I use.
       </p>
     </section>
 
     <!-- PROJECTS -->
     <section id="projects" class="section">
       <h2>Projects</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>Project Alpha</h3>
-          <p>Small web app demonstrating client-side routing and API calls.</p>
-          <div class="tags">
-            <span>JavaScript</span><span>Fetch API</span>
-          </div>
-          <p><a class="btn" href="#" target="_blank" rel="noopener">Live Demo</a></p>
+      <div class="project-list">
+
+        <article class="project-item">
+          <h3>Q1 – Basic Math</h3>
+          <p>Kullanıcıdan iki sayı alıp çarpımını hesaplayan basit program:</p>
+          <pre><code>function multiply(a, b) {
+  return a * b;
+}
+console.log(multiply(4, 5)); // 20</code></pre>
         </article>
 
-        <article class="card">
-          <h3>Project Beta</h3>
-          <p>Interactive data viz with canvas and simple animations.</p>
-          <div class="tags">
-            <span>HTML</span><span>Canvas</span>
-          </div>
-          <p><a class="btn" href="#" target="_blank" rel="noopener">Repository</a></p>
+        <article class="project-item">
+          <h3>Q2 – Ice Cream Sales</h3>
+          <p>3 gün boyunca 3 tat için satışları toplayıp ortalamayı hesaplayan kod:</p>
+          <pre><code>const days = [
+  { chocolate: 30, vanilla: 20, strawberry: 25 },
+  { chocolate: 25, vanilla: 22, strawberry: 30 },
+  { chocolate: 35, vanilla: 18, strawberry: 28 }
+];
+
+let total = { chocolate: 0, vanilla: 0, strawberry: 0 };
+days.forEach(d => {
+  total.chocolate += d.chocolate;
+  total.vanilla += d.vanilla;
+  total.strawberry += d.strawberry;
+});
+
+const avg = {
+  chocolate: total.chocolate / days.length,
+  vanilla: total.vanilla / days.length,
+  strawberry: total.strawberry / days.length
+};
+console.log(avg);</code></pre>
         </article>
 
-        <article class="card">
-          <h3>Project Gamma</h3>
-          <p>Minimal notes app using localStorage for persistence.</p>
-          <div class="tags">
-            <span>CSS</span><span>localStorage</span>
-          </div>
-          <p><a class="btn" href="#" target="_blank" rel="noopener">Read More</a></p>
+        <article class="project-item">
+          <h3>Q3 – Rocket to the Stars</h3>
+          <pre><code>function rocketMotion(mass, thrust, burnTime) {
+  const acceleration = thrust / mass;
+  const velocity = acceleration * burnTime;
+  return { acceleration, velocity };
+}
+console.log(rocketMotion(1000, 5000, 10));</code></pre>
+        </article>
+
+        <article class="project-item">
+          <h3>Q4 – Newton’s Method</h3>
+          <pre><code>function sqrtApprox(n) {
+  let guess = n / 2;
+  for (let i = 0; i < 3; i++) {
+    guess = (guess + n / guess) / 2;
+  }
+  return guess;
+}
+console.log(sqrtApprox(25));</code></pre>
+        </article>
+
+        <article class="project-item">
+          <h3>Q5 – Which Day</h3>
+          <pre><code>function whichDay(year, month, day) {
+  const d = new Date(year, month - 1, day);
+  return d.getDay(); // 0 = Sunday
+}
+console.log(whichDay(2025, 9, 14));</code></pre>
+        </article>
+
+        <article class="project-item">
+          <h3>Q6 – Wind Chill</h3>
+          <pre><code>function windChill(T, V) {
+  if (T > 50 || V <= 3) return "N/A";
+  return 35.74 + 0.6215*T - 35.75*(V**0.16) + 0.4275*T*(V**0.16);
+}
+console.log(windChill(30, 10));</code></pre>
+        </article>
+
+        <article class="project-item">
+          <h3>Q7 – Divisible by 7</h3>
+          <pre><code>function bothDivisible(a, b) {
+  return a % 7 === 0 && b % 7 === 0;
+}
+console.log(bothDivisible(14, 21));</code></pre>
+        </article>
+
+        <article class="project-item">
+          <h3>Q8 – Triangle Area (Heron)</h3>
+          <pre><code>function heronArea(a, b, c) {
+  const s = (a + b + c) / 2;
+  return Math.sqrt(s * (s - a) * (s - b) * (s - c));
+}
+console.log(heronArea(3, 4, 5));</code></pre>
+        </article>
+
+        <article class="project-item">
+          <h3>Q9 – BMI</h3>
+          <pre><code>function BMI(weight, height) {
+  return weight / (height * height);
+}
+console.log(BMI(70, 1.75));</code></pre>
+        </article>
+
+        <article class="project-item">
+          <h3>Q10 – Barycenter Calculation</h3>
+          <pre><code>function barycenter(m1, x1, m2, x2) {
+  return (m1*x1 + m2*x2) / (m1 + m2);
+}
+console.log(barycenter(5, 0, 3, 10));</code></pre>
         </article>
       </div>
     </section>
@@ -88,28 +168,39 @@
     <section id="documentation" class="section">
       <h2>Documentation</h2>
       <details open>
-        <summary>Setup</summary>
-        <ol>
-          <li>Clone or download the repository.</li>
-          <li>Open <code>index.html</code> in a browser (no build step).</li>
-          <li>Deploy via GitHub Pages: Settings → Pages → Branch: <code>main</code>.</li>
-        </ol>
+        <summary><strong>Variables & Data Types</strong></summary>
+        <pre><code>let age = 17; 
+let name = "Sarp";
+let isStudent = true;</code></pre>
       </details>
+
       <details>
-        <summary>Structure</summary>
-        <pre><code>.
-├─ index.html
-├─ style.css
-└─ script.js
-</code></pre>
+        <summary><strong>Conditionals</strong></summary>
+        <pre><code>if (age >= 18) {
+  console.log("Adult");
+} else {
+  console.log("Minor");
+}</code></pre>
       </details>
+
       <details>
-        <summary>Contributing</summary>
-        <p>Use feature branches, write clear commit messages, open PRs with short summaries and screenshots.</p>
+        <summary><strong>Loops</strong></summary>
+        <pre><code>for (let i = 0; i < 5; i++) {
+  console.log("Merhaba " + i);
+}</code></pre>
       </details>
+
       <details>
-        <summary>License</summary>
-        <p>MIT (placeholder).</p>
+        <summary><strong>Functions</strong></summary>
+        <pre><code>function square(x) {
+  return x * x;
+}</code></pre>
+      </details>
+
+      <details>
+        <summary><strong>Arrays & Objects</strong></summary>
+        <pre><code>let grades = [80, 90, 100];
+let student = { name: "Sarp", age: 17 };</code></pre>
       </details>
     </section>
 
@@ -117,10 +208,8 @@
     <section id="resources" class="section">
       <h2>Resources</h2>
       <ul class="resources">
-        <li><a href="https://developer.mozilla.org/" target="_blank" rel="noopener">MDN Web Docs</a> — HTML/CSS/JS reference.</li>
-        <li><a href="https://web.dev/learn/" target="_blank" rel="noopener">web.dev/learn</a> — Modern web learning paths.</li>
-        <li><a href="https://github.com/ossu/computer-science" target="_blank" rel="noopener">OSSU CS</a> — Open source CS curriculum.</li>
-        <!-- İSTEK ÜZERİNE: Duke University's Programming Foundations kursu BİLEREK eklenmedi -->
+        <li><a href="https://codehs.com/" target="_blank" rel="noopener">CodeHS</a></li>
+        <li><a href="https://chat.openai.com/" target="_blank" rel="noopener">ChatGPT</a></li>
       </ul>
     </section>
   </main>
