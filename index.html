@@ -233,6 +233,142 @@ public class Q10_SimpleInterest {
     </article>
 
 <article class="project-item">
+  <h3>Princeton Web Exercises #11 — Standard deviation</h3>
+  <p>📊 <strong>Objective:</strong> Read 5 numbers, print the average and the <em>sample</em> standard deviation
+  (<code>s = sqrt( Σ(x - mean)^2 / (n - 1) )</code>) in addition to the average.</p>
+  <pre><code>import java.util.Scanner;
+
+public class StandardDeviation {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
+        double[] x = new double[5];
+        System.out.println("Enter 5 numbers:");
+        for (int i = 0; i &lt; 5; i++) {
+            x[i] = in.nextDouble();
+        }
+
+        // mean
+        double sum = 0.0;
+        for (int i = 0; i &lt; 5; i++) sum += x[i];
+        double mean = sum / 5.0;
+
+        // sample standard deviation
+        double sq = 0.0;
+        for (int i = 0; i &lt; 5; i++) {
+            double d = x[i] - mean;
+            sq += d * d;
+        }
+        double s = Math.sqrt(sq / 4.0); // n-1 = 4 for sample SD
+
+        System.out.println("Average: " + mean);
+        System.out.println("Sample standard deviation: " + s);
+    }
+}
+</code></pre>
+</article>
+
+
+<article class="project-item">
+  <h3>Princeton Web Exercises #12 — Three equal?</h3>
+  <p>🔁 <strong>Objective:</strong> Read three numbers and print <code>true</code> if all three are equal, else <code>false</code>.</p>
+  <pre><code>import java.util.Scanner;
+
+public class ThreeEqual {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
+        System.out.print("Enter first value: ");
+        int a = in.nextInt();
+        System.out.print("Enter second value: ");
+        int b = in.nextInt();
+        System.out.print("Enter third value: ");
+        int c = in.nextInt();
+
+        boolean allEqual = (a == b) &amp;&amp; (b == c);
+        System.out.println(allEqual);
+    }
+}
+</code></pre>
+</article>
+
+
+<article class="project-item">
+  <h3>Princeton Web Exercises #13 — LeapYear arguments (what happens?)</h3>
+  <p>📅 <strong>Objective:</strong> Understand how a typical <code>LeapYear</code> program that expects a single integer
+  command-line argument behaves with different invocations.</p>
+  <p><strong>Reference LeapYear program (typical):</strong></p>
+  <pre><code>public class LeapYear {
+    public static void main(String[] args) {
+        int year = Integer.parseInt(args[0]); // expects exactly one integer
+        boolean isLeap = (year % 4 == 0) &amp;&amp; (year % 100 != 0 || year % 400 == 0);
+        System.out.println(isLeap);
+    }
+}
+</code></pre>
+  <p><strong>What happens for each run:</strong></p>
+  <ul>
+    <li><code>java LeapYear</code> → <em>ArrayIndexOutOfBoundsException</em> (no <code>args[0]</code>).</li>
+    <li><code>java LeapYear 1975.5</code> → <em>NumberFormatException</em> (not an integer).</li>
+    <li><code>java LeapYear -1975</code> → Program runs; prints <code>false</code> with the usual rule above (negative years still compute a boolean).</li>
+    <li><code>java LeapYear 1975 1976 1977</code> → Program uses only <code>args[0]</code> (=1975); extra args are ignored; prints <code>false</code>.</li>
+  </ul>
+  <p><em>Note:</em> Many safer versions first check <code>args.length == 1</code> and print a usage message instead of throwing exceptions.</p>
+</article>
+
+
+<article class="project-item">
+  <h3>Princeton Web Exercises #14 — Compiler behavior with string in arithmetic</h3>
+  <p>🧩 <strong>Objective:</strong> What happens for <code>int a = 27 * "three";</code> ? Explain and show the correct approach.</p>
+  <p><strong>Answer:</strong> It does <em>not</em> compile. In Java, arithmetic operators require numeric operands. A
+  <code>String</code> cannot be multiplied by an <code>int</code>, so the compiler reports a type error (bad operand types for <code>*</code>).</p>
+  <pre><code>// Won't compile:
+// int a = 27 * "three";   // ERROR: String cannot be used in arithmetic
+
+// One correct approach is to convert a numeric string to an int:
+import java.util.Scanner;
+
+public class MultiplyWordFix {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
+        // Example: read a number as text, then parse it
+        System.out.print("Enter a whole number as text (e.g., 3): ");
+        String s = in.next();
+
+        int value = Integer.parseInt(s); // convert String to int
+        int a = 27 * value;
+
+        System.out.println("27 * " + value + " = " + a);
+    }
+}
+</code></pre>
+</article>
+
+
+<article class="project-item">
+  <h3>Princeton Web Exercises #15 — Compiler behavior with uninitialized local variable</h3>
+  <p>🧪 <strong>Objective:</strong> What happens for the code below? Show the fix.</p>
+  <pre><code>// Problem fragment:
+// double x;
+// System.out.println(x);   // ERROR: variable x might not have been initialized
+
+// Fix: initialize local variables before use.
+public class UseInitializedVariable {
+    public static void main(String[] args) {
+        double x = 0.0;      // initialized
+        System.out.println(x);
+    }
+}
+</code></pre>
+  <p><strong>Answer:</strong> The original fragment does <em>not</em> compile. Local variables in <code>main</code> are not
+  automatically initialized; the compiler reports <em>"variable x might not have been initialized"</em>. Initializing <code>x</code> (e.g., <code>double x = 0.0;</code>) fixes it.</p>
+</article>
+    
+    
+    
+
+<article class="project-item">
   <h3>Princeton Web Exercises #17</h3>
   <p>🧮 <strong>Objective:</strong> Read real-valued parameters x1, y1, x2, y2 and print the Euclidean distance between the points (x1, y1) and (x2, y2). Use <code>Math.sqrt()</code>.</p>
   <pre><code>import java.util.Scanner;
@@ -392,6 +528,46 @@ public class BMI {
 </code></pre>
 </article>
 
+<article class="project-item">
+  <h3>Princeton Web Exercises #23 — Temperature conversion</h3>
+  <p>🧪 <strong>Objective:</strong> Convert Fahrenheit (F) to Celsius (C). Fix the integer-division bug by using double division.</p>
+  <pre><code>import java.util.Scanner;
+
+public class TempConversion {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
+        System.out.print("Enter Fahrenheit: ");
+        double F = in.nextDouble();
+
+        double C = (F - 32) * 5.0 / 9.0; // use 5.0/9.0 to avoid integer division
+        System.out.println("Celsius: " + C);
+    }
+}
+</code></pre>
+</article>
+
+
+<article class="project-item">
+  <h3>Princeton Web Exercises #24 — Exponentiation</h3>
+  <p>⚡ <strong>Objective:</strong> Compute a² correctly. In Java, <code>^</code> is XOR, not power. Use multiplication (or <code>Math.pow</code> if desired).</p>
+  <pre><code>import java.util.Scanner;
+
+public class SquareValue {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
+        System.out.print("Enter a: ");
+        double a = in.nextDouble();
+
+        double square = a * a; // correct way for a²
+        System.out.println("a^2 = " + square);
+    }
+}
+</code></pre>
+</article>
+    
+
     
 article class="project-item">
   <h3>Princeton Creative Exercises #25</h3>
@@ -422,7 +598,30 @@ public class WindChillCalculator {
 </code></pre>
 </article>
 
+<article class="project-item">
+  <h3>Princeton Web Exercises #26 — Max of Two Integers (no <code>if</code>, no <code>Math.max</code>)</h3>
+  <p>🔝 <strong>Objective:</strong> Compute the maximum of two integers <code>a</code> and <code>b</code> without using <code>if</code> or <code>Math.max()</code>. (Assume no overflow.)</p>
+  <pre><code>import java.util.Scanner;
 
+public class MaxOfTwo {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
+        System.out.print("Enter a: ");
+        int a = in.nextInt();
+        System.out.print("Enter b: ");
+        int b = in.nextInt();
+
+        // Barring overflow:
+        int max = (a + b + Math.abs(a - b)) / 2;
+
+        System.out.println("max(a, b) = " + max);
+    }
+}
+</code></pre>
+</article>
+
+    
 <article class="project-item">
   <h3>Princeton Web Exercises #27</h3>
   <p>🧮 <strong>Objective:</strong> For x^3 + b x^2 + c x + d, compute the discriminant: b^2 c^2 − 4 c^3 − 4 b^3 d − 27 d^2 + 18 b c d.</p>
@@ -472,6 +671,41 @@ public class MyProgram {
 }
 </code></pre>
 </article>
+
+<article class="project-item">
+  <h3>Princeton Web Exercises #30 — Car loan payments</h3>
+  <p>🚗 <strong>Objective:</strong> Read loan amount <code>P</code> (dollars), term <code>Y</code> (years), and annual interest rate <code>R</code> (percent). Compute the fixed monthly payment using monthly compounding:
+  <br><code>payment = (P * r) / (1 - (1 + r)^(-n))</code>, where <code>n = 12 * Y</code> and <code>r = (R / 100) / 12</code>.</p>
+  <pre><code>import java.util.Scanner;
+
+public class CarLoan {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
+        System.out.print("Enter loan amount P (dollars): ");
+        double P = in.nextDouble();
+
+        System.out.print("Enter term Y (years): ");
+        int Y = in.nextInt();
+
+        System.out.print("Enter annual interest rate R (percent): ");
+        double R = in.nextDouble();
+
+        int n = 12 * Y;                 // total number of monthly payments
+        double r = (R / 100.0) / 12.0;  // monthly interest rate
+
+        double payment = (P * r) / (1.0 - Math.pow(1.0 + r, -n));
+
+        // Also show a rounded-to-cents version (optional)
+        double paymentRounded = Math.round(payment * 100.0) / 100.0;
+
+        System.out.println("Monthly payment (raw): " + payment);
+        System.out.println("Monthly payment (rounded to cents): " + paymentRounded);
+    }
+}
+</code></pre>
+</article>
+    
 
     
 <article class="project-item">
