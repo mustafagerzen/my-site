@@ -739,92 +739,90 @@ public class Trig {
     </section>
 
     <!-- DOCUMENTATION -->
-    <section id="documentation" class="section">
-      <h2>Documentation</h2>
-      <details open>
-        <summary><strong>Unit 1</strong></summary>
-        <ul>
-          <li><strong>Skill #1 – Algorithm:</strong> A step-by-step process to follow when completing a task or solving a problem. The sequencing of the tasks and clear instructions are essential. Many algorithms can be used to achieve the same goal—through different processes.</li>
-        </ul>
-      </details>
+<section id="documentation" class="section">
+  <h2>Documentation</h2>
+  <details open>
+    <summary><strong>Unit 1</strong></summary>
+    <ul>
+      <li><strong>Skill #1 – Algorithm:</strong> A step-by-step process to follow when completing a task or solving a problem. The sequencing of the tasks and clear instructions are essential. Many algorithms can be used to achieve the same goal—through different processes.</li>
+    </ul>
+  </details>
 
-      <details>
-        <summary><strong>Unit 1.1–1.4</strong></summary>
+  <details>
+    <summary><strong>Unit 1.1–1.4</strong></summary>
+    <ul>
+      <li><strong>Syntax Error:</strong> A mistake in the program where the rules of the language are not followed.</li>
+      <li><strong>Logic Error:</strong> Mistakes in the program cause it to behave incorrectly or unexpectedly.</li>
+      <li><strong>Run-Time Error:</strong> Mistakes in the program that occur during the execution of the program.</li>
+      <li>
+        <strong>Data Types:</strong>
         <ul>
-          <li><strong>Syntax Error:</strong> A mistake in the program where the rules of the language are not followed.</li>
-          <li><strong>Logic Error:</strong> Mistakes in the program cause it to behave incorrectly or unexpectedly.</li>
-          <li><strong>Run-Time Error:</strong> Mistakes in the program that occur during the execution of the program.</li>
-          <li>
-            <strong>Data Types:</strong>
-            <ul>
-              <li>Integer: Whole numbers.</li>
-              <li>Double: Numbers with decimals.</li>
-              <li>Boolean: Absolute. True or false.</li>
-              <li>String: Words, letters, etc.</li>
-              <li>Char: One singular character.</li>
-            </ul>
-          </li>
-          <li>
-            <pre><code>public class Example {
+          <li>Integer: Whole numbers.</li>
+          <li>Double: Numbers with decimals.</li>
+          <li>Boolean: Absolute. True or false.</li>
+          <li>String: Words, letters, etc.</li>
+          <li>Char: One singular character.</li>
+        </ul>
+      </li>
+      <li>
+        <pre><code>public class Example {
 public static void main(String[] args) {
-
-// public: accessible from anywhere in your program.
-// class: blueprint for objects in Java, all code must be in classes.
-// static: belongs to the class itself, not to an object.
-// void: method does not return anything.
-// main: entry point of Java.
-
+  // public: accessible from anywhere in your program.
+  // class: blueprint for objects in Java, all code must be in classes.
+  // static: belongs to the class itself, not to an object.
+  // void: method does not return anything.
+  // main: entry point of Java.
 }
 }
-            </code></pre>
-          </li>
-        </ul>
-      </details>
+        </code></pre>
+      </li>
+    </ul>
+  </details>
 
-      <details>
-        <summary><strong>Unit 1.5–1.9</strong></summary>
-        <ul>
-          <li>All of the following are the same:
-            <pre><code>a = a + 1;
+  <details>
+    <summary><strong>Unit 1.5–1.9</strong></summary>
+    <ul>
+      <li>All of the following are the same:
+        <pre><code>a = a + 1;
 a += 1;
 a++;</code></pre>
-          </li>
-          <li>
-            <strong>Input:</strong> To get input from the user, use:
-            <pre><code>Scanner in = new Scanner(System.in);</code></pre>
-          </li>
-        </ul>
-      </details>
+      </li>
+      <li>
+        <strong>Input:</strong> To get input from the user, use:
+        <pre><code>Scanner in = new Scanner(System.in);</code></pre>
+      </li>
+    </ul>
+  </details>
 
-      <details>
-        <summary><strong>1.3 (CodeHS) – Literals and Escape Sequences</strong></summary>
-        <ul>
-          <li>A literal is a fixed value, a constant.</li>
-          <li>Use "\" to add punctuation marks to output.<br>
-            Example:
-            <pre><code>System.out.println("She said \"Hey!\"");</code></pre>
-            Output: She said "Hey!"
-          </li>
-          <li>
-            <pre><code>\n = new line
+  <details>
+    <summary><strong>1.3 (CodeHS) – Literals and Escape Sequences</strong></summary>
+    <ul>
+      <li>A literal is a fixed value, a constant.</li>
+      <li>Use "\" to add punctuation marks to output.<br>
+        Example:
+        <pre><code>System.out.println("She said \"Hey!\"");</code></pre>
+        Output: She said "Hey!"
+      </li>
+      <li>
+        <pre><code>\n = new line
 \t = tab</code></pre>
-          </li>
-        </ul>
-      </details>
+      </li>
+    </ul>
+  </details>
 
-      <details>
-        <summary><strong>1.4 (CodeHS) – Errors</strong></summary>
-        <ul>
-          <li>Uninitialized variable: "variable might NOT be INITIALIZED" error.</li>
-          <li>Wrong data type: "ERROR: INCOMPATIBLE TYPES" error.</li>
-        </ul>
-      </details>
+  <details>
+    <summary><strong>1.4 (CodeHS) – Errors</strong></summary>
+    <ul>
+      <li>Uninitialized variable: "variable might NOT be INITIALIZED" error.</li>
+      <li>Wrong data type: "ERROR: INCOMPATIBLE TYPES" error.</li>
+    </ul>
+  </details>
 
-      <details>
-        <summary><strong>Objects and Calling Methods</strong></summary>
-        <ul>
-          <li>Use <code>Scanner</code> to get input. Example:</li>
-          <pre><code>import java.util.Scanner;
+  <details>
+    <summary><strong>Objects and Calling Methods</strong></summary>
+    <ul>
+      <li>Use <code>Scanner</code> to get input. Example:</li>
+      <pre><code>import java.util.Scanner;
 
 public class BMI {
     public static void main(String[] args) {
@@ -840,67 +838,67 @@ public class BMI {
         System.out.println("BMI: " + bmi);
     }
 }
-          </code></pre>
-        </ul>
-      </details>
+      </code></pre>
+    </ul>
+  </details>
 
-      <details>
-        <summary><strong>1.5 (CodeHS) – Casting</strong></summary>
-        <ul>
-          <li><strong>Widening:</strong> Converting an integer to a double.</li>
-          <li><strong>Narrowing:</strong> Converting a double to an integer. Even if the double is 9.9, narrowing converts it to 9 (not 10). Rounding can be done by adding 0.5 before converting.</li>
-        </ul>
-      </details>
+  <details>
+    <summary><strong>1.5 (CodeHS) – Casting</strong></summary>
+    <ul>
+      <li><strong>Widening:</strong> Converting an integer to a double.</li>
+      <li><strong>Narrowing:</strong> Converting a double to an integer. Even if the double is 9.9, narrowing converts it to 9 (not 10). Rounding can be done by adding 0.5 before converting.</li>
+    </ul>
+  </details>
 
-      <details>
-        <summary><strong>1.7 – API & Libraries</strong></summary>
-        <ul>
-          <li><strong>java.lang:</strong> Already uploaded libraries (String, Math, System, Runtime).</li>
-          <li><strong>java.util:</strong> The libraries you upload (Scanner, Random, ArrayList, HashMap).</li>
-          <li><strong>Java package:</strong> A collection of related classes grouped together.</li>
-          <li><strong>API:</strong> Application Programming Interface. Provides documentation explaining what those libraries do and how to call their methods or actions. It is like an instruction manual.</li>
-        </ul>
-      </details>
+  <details>
+    <summary><strong>1.7 – API & Libraries</strong></summary>
+    <ul>
+      <li><strong>java.lang:</strong> Already uploaded libraries (String, Math, System, Runtime).</li>
+      <li><strong>java.util:</strong> The libraries you upload (Scanner, Random, ArrayList, HashMap).</li>
+      <li><strong>Java package:</strong> A collection of related classes grouped together.</li>
+      <li><strong>API:</strong> Application Programming Interface. Provides documentation explaining what those libraries do and how to call their methods or actions. It is like an instruction manual.</li>
+    </ul>
+  </details>
 
-      <details>
-        <summary><strong>1.8 & 1.9 (CodeHS) – Method Signatures</strong></summary>
-        <ul>
-          <li>Getting started with Java, variables, primitive types, expressions, input, and basic APIs.</li>
-          <li>
-            <strong>Minimal program:</strong>
-            <pre><code>public class Main {
+  <details>
+    <summary><strong>1.8 & 1.9 (CodeHS) – Method Signatures</strong></summary>
+    <ul>
+      <li>Getting started with Java, variables, primitive types, expressions, input, and basic APIs.</li>
+      <li>
+        <strong>Minimal program:</strong>
+        <pre><code>public class Main {
     public static void main(String[] args) {
         System.out.println("hi");
     }
 }</code></pre>
-          </li>
-          <li>
-            <strong>Primitive types & Strings:</strong>
-            <pre><code>int count = 0;
+      </li>
+      <li>
+        <strong>Primitive types & Strings:</strong>
+        <pre><code>int count = 0;
 double price = 19.99;
 boolean ok = true;
 char grade = 'A';
 String name = "Ada";
 System.out.println("Hello " + name);</code></pre>
-          </li>
-          <li>
-            <strong>Expressions & precedence:</strong>
-            <pre><code>int a = 7, b = 3;
+      </li>
+      <li>
+        <strong>Expressions & precedence:</strong>
+        <pre><code>int a = 7, b = 3;
 System.out.println(a / b);    // 2  (int division)
 System.out.println(a / 3.0);  // 2.3333333333333335
 System.out.println("Total: " + 5 + 3);   // "Total: 53"
 System.out.println("Total: " + (5 + 3)); // "Total: 8"</code></pre>
-          </li>
-          <li>
-            <strong>Assignment, compound ops, ++/--:</strong>
-            <pre><code>int x = 5;
+      </li>
+      <li>
+        <strong>Assignment, compound ops, ++/--:</strong>
+        <pre><code>int x = 5;
 x += 3;      // 8
 System.out.println(x++); // prints 8, then x becomes 9
 System.out.println(++x); // x becomes 10, then prints 10</code></pre>
-          </li>
-          <li>
-            <strong>Type conversion (casting):</strong>
-            <pre><code>double y = 2.9;
+      </li>
+      <li>
+        <strong>Type conversion (casting):</strong>
+        <pre><code>double y = 2.9;
 int k = (int) y;           // 2  (truncation)
 
 int total = 284;
@@ -912,10 +910,10 @@ double avgRight = (double) total / 3;
 // "lossy conversion" fix: cast the result or use double destination
 int i = (int)(2 * 2.2);    // 4
 double dx = 2 * 2.2;       // 4.4</code></pre>
-          </li>
-          <li>
-            <strong>Input with Scanner:</strong>
-            <pre><code>import java.util.Scanner;
+      </li>
+      <li>
+        <strong>Input with Scanner:</strong>
+        <pre><code>import java.util.Scanner;
 
 public class BMI {
     public static void main(String[] args) {
@@ -931,21 +929,20 @@ public class BMI {
         System.out.println("BMI: " + bmi);
     }
 }</code></pre>
-          </li>
-          <li>
-            <strong>Common errors:</strong>
-            <ul>
-              <li>Syntax error — violates language rules (e.g., missing semicolon).</li>
-              <li>Logic error — code compiles but behavior is wrong (e.g., integer division when you wanted decimal).</li>
-              <li>Run-time error — occurs while executing (e.g., input mismatch).</li>
-              <li>Incompatible types / lossy conversion — assigning double to int without a cast.</li>
-              <li>Variable might not have been initialized — using a local variable before assignment.</li>
-            </ul>
-          </li>
+      </li>
+      <li>
+        <strong>Common errors:</strong>
+        <ul>
+          <li>Syntax error — violates language rules (e.g., missing semicolon).</li>
+          <li>Logic error — code compiles but behavior is wrong (e.g., integer division when you wanted decimal).</li>
+          <li>Run-time error — occurs while executing (e.g., input mismatch).</li>
+          <li>Incompatible types / lossy conversion — assigning double to int without a cast.</li>
+          <li>Variable might not have been initialized — using a local variable before assignment.</li>
         </ul>
-      </details>
-    </section>
-    
+      </li>
+    </ul>
+  </details>
+</section>  
     <!-- RESOURCES -->
     <section id="resources" class="section">
       <h2>Resources</h2>
