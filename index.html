@@ -1025,6 +1025,37 @@ public class BMI {
   </ul>
 </details>
 
+
+<!-- Append: Unit 2.10–2.12 -->
+<details>
+  <summary><strong>Unit 2.10–2.12</strong></summary>
+
+  <p><strong>2.10 – String Algorithms</strong></p>
+  <ul>
+    <li>Loop chars: <code>for (int i=0; i&lt;s.length(); i++) { char ch = s.charAt(i); }</code></li>
+    <li>Substring parts: <code>substring(a,b)</code> (a inclusive, b exclusive)</li>
+    <li>Find/compare: <code>indexOf(...)</code>, <code>equals(...)</code>, <code>compareTo(...)</code></li>
+    <li>Build result: <code>res += ...;</code> use <code>toLowerCase()</code> for case-insensitive work</li>
+    <li>Watch: off-by-one with substring, empty strings</li>
+  </ul>
+
+  <p><strong>2.11 – Nested Iteration</strong></p>
+  <ul>
+    <li><code>for (r=0; r&lt;R; r++) for (c=0; c&lt;C; c++) { ... }</code></li>
+    <li>Use for tables, grids, triangles, frequency charts</li>
+    <li>Reset inner counters/strings each outer loop</li>
+  </ul>
+
+  <p><strong>2.12 – Informal Run-Time</strong></p>
+  <ul>
+    <li>Count steps, not seconds</li>
+    <li>One loop over n → linear (<code>O(n)</code>)</li>
+    <li>Nested loops n×m (or n×n) → quadratic (<code>O(n²)</code>)</li>
+    <li>Improve by reducing iterations; stop early when found (<code>break</code>/<code>return</code>)</li>
+  </ul>
+</details>
+  
+
   
 </section>  
     <!-- RESOURCES -->
